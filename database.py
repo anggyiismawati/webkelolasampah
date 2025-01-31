@@ -5,10 +5,10 @@ def get_connection():
     """Membuat koneksi ke database MySQL."""
     try:
         conn = mysql.connector.connect(
-            host='localhost',        # Ganti dengan host MySQL Anda
-            database='kelola_sampah',  # Ganti dengan nama database Anda
-            user='root',             # Ganti dengan username MySQL Anda
-            password=''   # Ganti dengan password MySQL Anda
+           host=st.secrets["DB_HOST"],
+            database=st.secrets["DB_DATABASE"],
+            user=st.secrets["DB_USER"],
+            password=st.secrets["DB_PASSWORD"]
         )
         return conn
     except Error as e:
